@@ -2,17 +2,30 @@
 function App() {
   return (
     <div>
-      <h2>Hello</h2>
-      <Folder />
+      <Folder name='Desktop'>
+        <File name='cat.png' />
+        <File name='dog.jpeg' />
+      </Folder>
+      <Folder name='Applications' />
     </div>
-
   );
 }
 
-const Folder = () => {
+const Folder = (props) => {
   return (
     <div>
-      <h3>Yo</h3>
+      {props.name}
+      <div style={{marginLeft: '17px'}}>
+        {props.children}
+      </div>
+    </div>
+  );
+}
+
+const File = (props) => {
+  return (
+    <div>
+      {props.name}
     </div>
   );
 }
